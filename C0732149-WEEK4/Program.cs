@@ -10,8 +10,8 @@ namespace C0732149_WEEK4
     {
         static void Main(string[] args)
         {
-
-
+            Countryside blue = new Countryside();
+            blue.launch();
         }
     }
            
@@ -30,9 +30,15 @@ namespace C0732149_WEEK4
         village Maple = new village();
         village Toronto = new village();
         village Ajax = new village();
+        village First;
+        village Last;
+        village Temp;
+
 
             public void launch()
         {
+            First = Maple;
+            Last = Ajax;
             Maple.VillageName = "Maple";
             Maple.nextVillage = Toronto;
             Maple.previousVillage = null;
@@ -43,6 +49,20 @@ namespace C0732149_WEEK4
             Ajax.nextVillage = null;
             Ajax.previousVillage = Toronto;
 
+            Console.WriteLine (this.displayMap());
+        }
+        public string displayMap()
+        {
+            string listofCities = "";
+            /* What problem do I need to Solve? */
+            /* we need to print All the Cities in Our Area.*/
+
+            listofCities = listofCities + First.VillageName + "----------";
+            Temp = First.nextVillage;
+            listofCities = listofCities + Temp.VillageName + "---------";
+
+
+            return listofCities;
         }
     }
 }
